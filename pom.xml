@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <org.seleniumhq.selenium.version>3.141.59</org.seleniumhq.selenium.version>
         <aspectj.version>1.9.2</aspectj.version>

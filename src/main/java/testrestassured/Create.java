@@ -1,5 +1,6 @@
 package testrestassured;
 
+
 public class Create {
 
     private String name;
@@ -35,4 +36,6 @@ public class Create {
     public void setJob(String job) {
         this.job = job;
     }
+
+
 }
