@@ -2,6 +2,7 @@ package testrestassured;
 
 public class AuthUserFactory {
 
+
     public static AuthUser createSuccedUser() {
         return new AuthUser("eve.holt@reqres.in", "cityslicka");
     }

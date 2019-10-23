@@ -1,24 +1,24 @@
 package testrestassured;
 
-import io.qameta.allure.Step;
-
-public class AuthUser {
+public class Register {
 
     private String email;
     private String password;
 
 
-    public AuthUser(String email, String password) {
+    public Register(String email) {
+        this.email = email;
+    }
+
+
+    public Register(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public AuthUser(String email) {
-        this.email = email;
+    public Register() {
     }
 
-    public AuthUser() {
-    }
 
     public String getEmail() {
         return email;

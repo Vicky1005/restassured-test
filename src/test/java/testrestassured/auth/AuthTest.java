@@ -1,6 +1,8 @@
 package testrestassured.auth;
 
 import io.restassured.RestAssured;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import testrestassured.AbstractTest;
 import testrestassured.AuthUserFactory;
@@ -11,6 +13,8 @@ public class AuthTest extends AbstractTest {
 
 
     @Test
+    @Tag("POST")
+    @DisplayName("Авторизация с валидными данными")
     public void loginSuccess() {
         RestAssured.given(requestSpecification)
                 .basePath("/api/login")
@@ -25,6 +29,8 @@ public class AuthTest extends AbstractTest {
     }
 
     @Test
+    @Tag("POST")
+    @DisplayName("Авторизация с невалидными данными")
     public void loginError() {
         RestAssured.given(requestSpecification)
                 .basePath("/api/login")
@@ -37,6 +43,8 @@ public class AuthTest extends AbstractTest {
     }
 
     @Test
+    @Tag("POST")
+    @DisplayName("Авторизация с невалидным email")
     public void invalidEmail() {
         RestAssured.given(requestSpecification)
                 .basePath("/api/login")
