@@ -1,7 +1,5 @@
 package testrestassured;
 
-import io.qameta.allure.Step;
-
 public class AuthUser {
 
     private String email;

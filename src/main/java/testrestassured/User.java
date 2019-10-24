@@ -19,6 +19,14 @@ public class User {
     public User() {
     }
 
+    public User(int id, String email, String firstName, String lastName, String avatar) {
+        this.id = id;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.avatar = avatar;
+    }
+
 
     public int getId() {
         return id;
