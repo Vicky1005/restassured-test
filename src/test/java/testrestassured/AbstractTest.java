@@ -11,5 +11,4 @@ public abstract class AbstractTest {
         requestSpecification=RequestSpec.getInstance();
     }
 
-
 }

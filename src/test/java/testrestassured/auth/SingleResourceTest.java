@@ -25,8 +25,7 @@ public class SingleResourceTest extends AbstractTest {
                 .body("data.name", equalTo("fuchsia rose"))
                 .body("data.year", equalTo(2001))
                 .body("data.color", equalTo("#C74375"))
-                .body("$", hasKey("pantone_value"))
-                .body("pantone_value", equalTo("17-2031"));
-
+                .body("data", hasKey("pantone_value"))
+                .body("data.pantone_value", equalTo("17-2031"));
     }
 }

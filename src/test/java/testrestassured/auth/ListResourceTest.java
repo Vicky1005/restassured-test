@@ -46,11 +46,11 @@ public class ListResourceTest extends AbstractTest {
                 .get()
                 .then()
                 .statusCode(200)
-                .body("id", equalTo(2))
-                .body("name", equalTo("fuchsia rose"))
-                .body("year", equalTo(2001))
-                .body("color", equalTo("#C74375"))
-                .body("pantone_value", equalTo("17-2031"));
+                .body("data.id", equalTo(2))
+                .body("data.name", equalTo("fuchsia rose"))
+                .body("data.year", equalTo(2001))
+                .body("data.color", equalTo("#C74375"))
+                .body("data.pantone_value", equalTo("17-2031"));
 
 
     }
