@@ -1,0 +1,39 @@
+@Test
+    public void downloadFile() throws IOException {
+        String downloadFolder = "downloads";
+        File outputPath = new File(downloadFolder);
+        if (!outputPath.exists()) {
+            outputPath.mkdir();
+        }
+
+        String downloadFileName = "downloadedFile_" + System.currentTimeMillis() + "_.txt";
+        File outputFile = new File(downloadFolder + "/" + downloadFileName);
+        outputFile.createNewFile();
+
+        String urlToDownload = "https://raw.githubusercontent.com/eviltester/libraryexamples/master/src/test/java/uk/co/compendiumdev/libraryexamples/restassured/DownloadAFileExampleTest.java";
+        final Response response = RestAssured.given().when().get(urlToDownload).andReturn();
+
+        if (response.getStatusCode() == 200) {
+            byte[] fileContents = response.getBody().asByteArray();
+            OutputStream outStream = null;
+
+            try {
+                outStream = new FileOutputStream(outputFile);
+                outStream.write(fileContents);
+
+            } catch (Exception e) {
+                System.out.println("Error writing file " + outputFile.getAbsolutePath());
+
+            } finally {
+
+                if (outStream != null) {
+                    outStream.close();
+                }
+            }
+
+        }
+
+        long answer = outputFile.length();
+        System.out.println(answer);
+        Assertions.assertNotEquals(0, answer);
+    }
